@@ -11,13 +11,13 @@ import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 
 // Reducers
-import { carsReducer } from "./reducers/CarsReducer";
+import { rootReducer } from './reducers/index';
 
 // Components
 import App from "./App";
 
 // Create the redux store
-const store = createStore(carsReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 // Mount the App component
 const rootElement = document.getElementById("root");

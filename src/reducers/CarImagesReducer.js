@@ -1,4 +1,4 @@
-import { FETCH_CAR_IMAGE_START, FETCH_CAR_IMAGE_SUCCESS, FETCH_CAR_IMAGE_FAIL } from "./../constants/ActionTypes";
+import { FETCH_CAR_IMAGE_START, FETCH_CAR_IMAGE_SUCCESS, FETCH_CAR_IMAGE_FAIL } from "../constants/ActionTypes";
 
 const initialState = {
   isFetching: false,
@@ -7,6 +7,7 @@ const initialState = {
 }
 
 export const carImagesReducer = (state = initialState, action) => {
+  console.log("Redux reducer state:", state)
   switch(action.type) {  
     case FETCH_CAR_IMAGE_START:
       return {
@@ -28,7 +29,7 @@ export const carImagesReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        error: action.payload;
+        error: action.payload
       }
     default:
       return state;
