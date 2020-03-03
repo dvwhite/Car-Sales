@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { carImagesReducer } from './carImagesReducer';
-import { carsReducer } from './carsReducer';
+import { carImagesReducer } from './CarImagesReducer';
+import { carsReducer } from './CarsReducer';
 
 export const rootReducer = combineReducers({
   carImagesReducer,

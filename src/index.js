@@ -19,11 +19,8 @@ import { rootReducer } from './reducers/index';
 // Components
 import App from "./App";
 
-// Logger
-import logger from 'redux-logger';
-
 // Create the redux store
-const store = createStore(rootReducer, applyMiddleware(logger, thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 // Mount the App component
 const rootElement = document.getElementById("root");
