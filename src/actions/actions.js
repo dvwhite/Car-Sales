@@ -4,6 +4,7 @@ import axios from "axios";
 import {
   BUY_ITEM,
   REMOVE_FEATURE,
+  UPDATE_CAR,
   FETCH_CAR_IMAGE_START,
   FETCH_CAR_IMAGE_SUCCESS,
   FETCH_CAR_IMAGE_FAIL
@@ -26,6 +27,13 @@ export const removeFeature = feature => {
     payload: feature
   };
 };
+// Updates the car object in the carsReducer state
+export const updateCar = car => {
+  return {
+    type: UPDATE_CAR,
+    payload: car
+  }
+}
 
 // Fetches an image from the car imagery API
 export const getCarImages = carStr => dispatch => {
