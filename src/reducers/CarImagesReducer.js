@@ -42,7 +42,7 @@ const initialState = {
     {
       id: 3,
       name: "Lamberghini Murcielago",
-      year: 2018,
+      year: 2009,
       image: "http://www.regcheck.org.uk/image.aspx/@bGFtYmVyZ2hpbmkgbXVyY2llbGFnbw==",
       price: 210530,
       features: [],
@@ -79,7 +79,7 @@ const initialState = {
     {
       id: 5,
       name: "Chevrolet Camaro Coupe",
-      year: 2019,
+      year: 2020,
       image: "http://www.regcheck.org.uk/image.aspx/@Y2hldnJvbGV0IGNhbWFybw==",
       price: 25995,
       features: [],
