@@ -9,14 +9,14 @@ const initialState = {
     image:
       "https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg",
     price: 26395,
-    features: []
-  },
-  additionalFeatures: [
-    { id: 1, name: "V-6 engine", price: 1500 },
-    { id: 2, name: "Racing detail package", price: 1500 },
-    { id: 3, name: "Premium sound system", price: 500 },
-    { id: 4, name: "Rear spoiler", price: 250 }
-  ]
+    features: [],
+    additionalFeatures: [
+      { id: 1, name: "V-6 engine", price: 1500 },
+      { id: 2, name: "Racing detail package", price: 1500 },
+      { id: 3, name: "Premium sound system", price: 500 },
+      { id: 4, name: "Rear spoiler", price: 250 }
+    ]
+  }
 };  
 
 export const carsReducer = (state = initialState, action) => {
@@ -27,13 +27,13 @@ export const carsReducer = (state = initialState, action) => {
         additionalPrice: state.additionalPrice + action.payload.price,
         car: {
           ...state.car,
-          features: [...state.car.features, action.payload]
-        },
-        additionalFeatures: [
-          ...state.additionalFeatures.filter(
-            item => item.id !== action.payload.id
-          )
-        ]
+          features: [...state.car.features, action.payload],
+          additionalFeatures: [
+            ...state.car.additionalFeatures.filter(
+              item => item.id !== action.payload.id
+            )
+          ]
+        }
       };
     case REMOVE_FEATURE:
       return {
@@ -43,9 +43,9 @@ export const carsReducer = (state = initialState, action) => {
           ...state.car,
           features: [
             ...state.car.features.filter(item => item.id !== action.payload.id)
-          ]
-        },
-        additionalFeatures: [...state.additionalFeatures, action.payload]
+          ],
+        additionalFeatures: [...state.car.additionalFeatures, action.payload]
+        }
       };
     case UPDATE_CAR:
       return {

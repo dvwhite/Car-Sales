@@ -40,7 +40,7 @@ const Car = (props) => {
         <AddedFeatures car={props.car} removeFeature={removeFeature} />
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={props.additionalFeatures} buyItem={buyItem} />
+        <AdditionalFeatures additionalFeatures={props.car.additionalFeatures} buyItem={buyItem} />
         <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>
@@ -51,7 +51,6 @@ const mapStateToProps = state => {
   return {
     car: state.carsReducer.car,
     cars: state.carImagesReducer.cars,
-    additionalFeatures: state.carsReducer.additionalFeatures,
     additionalPrice: state.carsReducer.additionalPrice
   }
 }
