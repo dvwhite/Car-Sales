@@ -1,8 +1,9 @@
-import { BUY_ITEM, REMOVE_FEATURE } from "../constants/ActionTypes";
+import { BUY_ITEM, REMOVE_FEATURE, UPDATE_CAR } from "../constants/ActionTypes";
 
 const initialState = {
   additionalPrice: 0,
   car: {
+    id: 0,
     price: 26395,
     name: "2019 Ford Mustang",
     image:
@@ -44,6 +45,11 @@ export const carsReducer = (state = initialState, action) => {
           ]
         },
         additionalFeatures: [...state.additionalFeatures, action.payload]
+      };
+    case UPDATE_CAR:
+      return {
+        ...state,
+        car: { ...action.payload }
       };
     default:
       return state;
