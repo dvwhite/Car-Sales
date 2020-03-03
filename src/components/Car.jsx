@@ -10,11 +10,10 @@ import AdditionalFeatures from './AdditionalFeatures';
 import Total from './Total';
 
 // Action types and creators
-import { BUY_ITEM, REMOVE_FEATURE } from '../constants/ActionTypes';
 import { buyItem, removeFeature, updateCar } from '../actions/actions';
 
 /*
-The parent component rendering all content in the application
+The shop component where the user can add and remove new features
 */
 const Car = (props) => {
   // Grab the id from the router props and use to identify the car

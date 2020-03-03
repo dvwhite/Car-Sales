@@ -30,18 +30,28 @@ const Card = styled.div`
   box-sizing: border-box;
   background: #fff;
   border: 0;
-  border-radius: 10px;
   margin: 1%;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
   backface-visibility: hidden;
   width: 40rem;
   height: auto;
+  transition: all 0.3s ease;
 
   @media (max-width: 700px) {
     width: 95%;
     height: auto;
     left: 2.5%;
+  }
+
+  &:hover {
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 20px hotpink;
+
+    img {
+      transition: all 0.4s ease;
+      transform: scale(1.1);
+    }
   }
 `;
 
@@ -51,7 +61,6 @@ const CarPicWrapper = styled(Column)`
   height: auto;
   margin-left: 0;
   padding: 0;
-  border-radius: 10px 0 0 10px;
   box-shadow: 0;
   overflow: hidden;
 `;
@@ -60,8 +69,8 @@ const CarPic = styled.img`
   max-width: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 10px 0 0 10px;
   border-right: 1px solid lightgray;
+  transition: all 0.4s ease;
 `;
 
 // Card text content
@@ -90,7 +99,7 @@ const Home = (props) => {
   return (
     <Cars>
       {props.cars?.map(car => (
-        <Link to={`/cars/${car.id}`}>
+        <Link to={`/cars/${car.id}`} key={car.id}>
           <Card>
             <Row>
               {/* Car pic column */}

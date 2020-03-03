@@ -4,10 +4,11 @@ const initialState = {
   additionalPrice: 0,
   car: {
     id: 0,
-    price: 26395,
-    name: "2019 Ford Mustang",
+    name: "Ford Mustang",
+    year: 2019,
     image:
       "https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg",
+    price: 26395,
     features: []
   },
   additionalFeatures: [
