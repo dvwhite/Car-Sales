@@ -1,9 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import 'bulma/css/bulma.css';
-import './styles.scss';
+// Styles
+import "bulma/css/bulma.css";
+import "./styles.scss";
 
-const rootElement = document.getElementById('root');
-ReactDOM.render(<App />, rootElement);
+// Routing
+import { BrowserRouter as Router } from "react-router-dom";
+
+// Redux imports
+import { applyMiddleware, createStore } from "redux";
+import thunk from "redux-thunk";
+import { Provider } from "react-redux";
+
+// Reducers
+import { rootReducer } from './reducers/index';
+
+// Components
+import App from "./App";
+
+// Create the redux store
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
+// Mount the App component
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+  rootElement
+);
